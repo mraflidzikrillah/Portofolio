@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -73,9 +72,292 @@
         .avatar-pulse {
             animation: pulse-ring 3s infinite ease-in-out;
         }
+
+        /* ===== Background Portfolio Modern ===== */
+        body {
+            background:
+                radial-gradient(circle at 10% 10%, rgba(14, 141, 231, 0.10), transparent 28%),
+                radial-gradient(circle at 90% 20%, rgba(99, 102, 241, 0.09), transparent 25%),
+                radial-gradient(circle at 50% 85%, rgba(2, 112, 201, 0.07), transparent 30%),
+                #f8fbff;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.55;
+            background-image:
+                linear-gradient(rgba(2,112,201,.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(2,112,201,.035) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
+            -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
+        }
+
+        .section-glow {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-glow::before,
+        .section-glow::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 999px;
+            filter: blur(55px);
+            opacity: .12;
+            pointer-events: none;
+        }
+
+        .section-glow::before {
+            top: -100px;
+            left: -80px;
+            background: #0c8de7;
+        }
+
+        .section-glow::after {
+            right: -90px;
+            bottom: -100px;
+            background: #6366f1;
+        }
+
+        .tech-card {
+            background: rgba(255,255,255,.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,.75);
+            box-shadow: 0 18px 50px rgba(15, 64, 110, .07);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 60px rgba(15, 64, 110, .12);
+        }
+
+        /* ===== BACKGROUND PORTFOLIO TEKNOLOGI ===== */
+        body {
+            background: #eaf4ff !important;
+            position: relative;
+        }
+
+        .site-background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 8% 12%, rgba(14, 165, 233, .22), transparent 24%),
+                radial-gradient(circle at 92% 18%, rgba(37, 99, 235, .18), transparent 25%),
+                radial-gradient(circle at 15% 82%, rgba(59, 130, 246, .15), transparent 27%),
+                radial-gradient(circle at 88% 86%, rgba(14, 165, 233, .16), transparent 25%),
+                linear-gradient(135deg, #f8fbff 0%, #e8f3ff 48%, #dceeff 100%);
+        }
+
+        .site-background::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: .45;
+            background-image:
+                linear-gradient(rgba(2,112,201,.10) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(2,112,201,.10) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: linear-gradient(to bottom, black 0%, rgba(0,0,0,.8) 60%, transparent 100%);
+        }
+
+        .site-background::after {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            right: -170px;
+            top: 24%;
+            border-radius: 50%;
+            border: 1px solid rgba(2,112,201,.15);
+            box-shadow:
+                0 0 0 55px rgba(2,112,201,.035),
+                0 0 0 110px rgba(2,112,201,.025),
+                0 0 80px rgba(14,165,233,.16);
+            animation: float-tech 9s ease-in-out infinite;
+        }
+
+        .tech-orb {
+            position: absolute;
+            border-radius: 9999px;
+            filter: blur(2px);
+            opacity: .65;
+            animation: float-tech 8s ease-in-out infinite;
+        }
+
+        .tech-orb.one {
+            width: 180px;
+            height: 180px;
+            left: -70px;
+            top: 30%;
+            background: radial-gradient(circle at 35% 35%, rgba(56,189,248,.55), rgba(37,99,235,.05) 70%);
+        }
+
+        .tech-orb.two {
+            width: 130px;
+            height: 130px;
+            right: 12%;
+            bottom: 10%;
+            background: radial-gradient(circle at 35% 35%, rgba(14,165,233,.45), rgba(37,99,235,.04) 70%);
+            animation-delay: -3s;
+        }
+
+        .circuit-lines {
+            position: absolute;
+            inset: 0;
+            opacity: .22;
+            background-image:
+                linear-gradient(90deg, transparent 0 49%, rgba(2,112,201,.25) 50%, transparent 51%),
+                linear-gradient(0deg, transparent 0 49%, rgba(2,112,201,.20) 50%, transparent 51%);
+            background-size: 180px 180px;
+            mask-image: radial-gradient(circle at center, black, transparent 75%);
+        }
+
+        /* Biarkan background teknologi terlihat di sela-sela kartu */
+        section.bg-white,
+        section.bg-slate-50 {
+            background-color: rgba(255,255,255,.24) !important;
+        }
+
+        section.bg-white > div,
+        section.bg-slate-50 > div {
+            position: relative;
+        }
+
+        /* Kartu dibuat sedikit transparan supaya menyatu dengan background */
+        .bg-white.rounded-2xl,
+        .bg-white.rounded-3xl,
+        .bg-slate-50.rounded-2xl,
+        .bg-slate-50.rounded-3xl {
+            background: rgba(255,255,255,.82) !important;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        @keyframes float-tech {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+            50% { transform: translate3d(0, -18px, 0) scale(1.035); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .site-background::after,
+            .tech-orb {
+                animation: none;
+            }
+        }
+
+        /* ===== ANIMASI WEBSITE ===== */
+        #tech-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .55;
+        }
+
+        .site-background .scan-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            top: 0;
+            background: linear-gradient(90deg, transparent, rgba(14,165,233,.5), transparent);
+            box-shadow: 0 0 14px rgba(14,165,233,.35);
+            animation: scan-page 8s linear infinite;
+        }
+
+        .site-background .pulse-dot {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #38bdf8;
+            box-shadow: 0 0 0 0 rgba(56,189,248,.6);
+            animation: dot-pulse 2.4s ease-out infinite;
+        }
+
+        .pulse-dot.a { left: 16%; top: 24%; animation-delay: -.7s; }
+        .pulse-dot.b { left: 78%; top: 42%; animation-delay: -1.4s; }
+        .pulse-dot.c { left: 35%; top: 76%; animation-delay: -2s; }
+        .pulse-dot.d { left: 91%; top: 74%; animation-delay: -.3s; }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-card {
+            opacity: 0;
+            transform: translateY(18px) scale(.985);
+            transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .stagger-card.revealed {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        @keyframes scan-page {
+            0% { transform: translateY(0); opacity: 0; }
+            10% { opacity: .8; }
+            90% { opacity: .8; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        @keyframes dot-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(56,189,248,.55); opacity: .45; }
+            70% { box-shadow: 0 0 0 18px rgba(56,189,248,0); opacity: 1; }
+            100% { box-shadow: 0 0 0 0 rgba(56,189,248,0); opacity: .45; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #tech-canvas { display: none; }
+            .site-background .scan-line,
+            .site-background .pulse-dot,
+            .reveal-on-scroll,
+            .stagger-card {
+                animation: none !important;
+                transition: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-800 font-sans custom-scrollbar antialiased">
+
+    <!-- Latar belakang teknologi -->
+    <div class="site-background" aria-hidden="true">
+        <canvas id="tech-canvas"></canvas>
+        <div class="circuit-lines"></div>
+        <div class="tech-orb one"></div>
+        <div class="tech-orb two"></div>
+        <div class="scan-line"></div>
+        <div class="pulse-dot a"></div>
+        <div class="pulse-dot b"></div>
+        <div class="pulse-dot c"></div>
+        <div class="pulse-dot d"></div>
+    </div>
+
 
     <!-- Header / Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100" id="main-header">
@@ -97,6 +379,7 @@
                     <a href="#pendidikan" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Pendidikan</a>
                     <a href="#pengalaman" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Pengalaman</a>
                     <a href="#sertifikasi" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Sertifikasi & Nilai</a>
+                    <a href="#media-sosial" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">Media Sosial</a>
                     <a href="#kontak" class="bg-brand-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-lg shadow-brand-200 hover:bg-brand-700 hover:shadow-xl hover:shadow-brand-300 transition-all transform hover:-translate-y-0.5">Hubungi Saya</a>
                 </nav>
 
@@ -116,6 +399,7 @@
                 <a href="#pendidikan" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition-all">Pendidikan</a>
                 <a href="#pengalaman" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition-all">Pengalaman</a>
                 <a href="#sertifikasi" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition-all">Sertifikasi & Nilai</a>
+                <a href="#media-sosial" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-600 transition-all">Media Sosial</a>
                 <a href="#kontak" onclick="toggleMobileMenu()" class="block text-center px-4 py-3 mt-4 rounded-xl text-base font-bold bg-brand-600 text-white shadow-lg shadow-brand-100 hover:bg-brand-700 transition-all">Hubungi Saya</a>
             </div>
         </div>
@@ -148,7 +432,7 @@
                     <div class="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 pt-4">
                         <div class="bg-white/5 backdrop-blur-sm p-3.5 rounded-2xl border border-white/10 text-center">
                             <span class="block text-2xl md:text-3xl font-extrabold text-brand-300">86.62</span>
-                            <span class="text-[10px] md:text-xs text-slate-300 font-semibold uppercase tracking-wider">Rata-Rata SKL</span>
+                            <span class="text-[10px] md:text-xs text-slate-300 font-semibold u komputer tracking-wider">Rata-Rata SKL</span>
                         </div>
                         <div class="bg-white/5 backdrop-blur-sm p-3.5 rounded-2xl border border-white/10 text-center">
                             <span class="block text-2xl md:text-3xl font-extrabold text-brand-300">Sangat</span>
@@ -183,12 +467,13 @@
                         <div class="relative bg-slate-900/50 p-3 rounded-3xl border border-white/10 shadow-2xl backdrop-blur-md">
                             <div class="overflow-hidden rounded-2xl aspect-[3/4] max-w-[320px] sm:max-w-[360px] relative">
                                 <!-- Photo Profile -->
-                                <img src="pas foto.jpeg" alt="M. Rafli Dzikrillah" class="w-full h-full object-cover transform scale-100 hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600';">
+                                <img src="rafli.jpeg" alt="M. Rafli Dzikrillah" class="w-full h-full object-cover transform scale-100 hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600';">
                                 
                                 <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent p-6 text-left">
                                     <h3 class="text-lg font-bold">M. Rafli Dzikrillah</h3>
-                                    <p class="text-xs text-brand-300 font-semibold uppercase tracking-wider">Teknik Komputer & Jaringan</p>
-                                    <span class="inline-flex mt-2 text-[10px] px-2.5 py-1 bg-brand-500/80 rounded-full font-bold">Aktif & Siap Kerja</span>
+                                    <p class="text-xs text-brand-300 font-semibold uppercase tracking-wider">Sistem dan Teknologi Informasi</p>
+                                    <span class="inline-flex mt-2 text-[10px] px-2.5 py-1 bg-brand-500/80 rounded-full font-bold">Mahasiswa Aktif
+                                        semester 1 </span>
                                 </div>
                             </div>
                         </div>
@@ -199,7 +484,7 @@
     </section>
 
     <!-- Section Tentang Saya -->
-    <section id="tentang" class="py-20 bg-white">
+    <section id="tentang" class="reveal-on-scroll py-20 bg-white section-glow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
@@ -211,7 +496,7 @@
                         <div class="w-20 h-1.5 bg-brand-600 rounded-full mt-4"></div>
                     </div>
                     <p class="text-slate-600 leading-relaxed text-base">
-                        Saya adalah lulusan baru bidang keahlian Teknik Jaringan Komputer dan Telekomunikasi dari SMKS Yadika 1 Bangil tahun lulus 2026. Melalui pendidikan formal dan pengalaman praktis selama Praktik Kerja Lapangan (PKL), saya telah mengembangkan landasan kokoh di bidang administrasi sistem dan instalasi jaringan.
+                        Saya adalah lulusan baru bidang keahlian Teknik Jaringan Komputer dan Telekomunikasi dari SMKS Yadika 1 Bangil tahun lulus 2026. Sekarang saya melanjutkan jenjang kuliah di Institut Teknologi Bisnis Yadika Pasuruan pada Program Studi Sistem dan Teknologi Informasi untuk terus mengembangkan pengetahuan, pengalaman, dan kemampuan saya di bidang teknologi informasi.
                     </p>
                     <p class="text-slate-600 leading-relaxed text-base">
                         Sebagai pribadi yang disiplin, jujur, dan bertanggung jawab, saya terbiasa melayani masyarakat serta melakukan tugas administratif secara rapi dan presisi tinggi menggunakan perkakas kerja modern.
@@ -279,7 +564,7 @@
     </section>
 
     <!-- Section Pendidikan -->
-    <section id="pendidikan" class="py-20 bg-slate-50">
+    <section id="pendidikan" class="reveal-on-scroll py-20 bg-slate-50 section-glow">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-xs font-bold text-brand-600 tracking-widest uppercase block mb-2">PENDIDIKAN FORMAL</span>
@@ -288,6 +573,24 @@
             </div>
 
             <div class="relative border-l-2 border-slate-200 ml-4 md:ml-32 space-y-12">
+                <!-- Pendidikan 4 - Kuliah -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-3.5 top-0 bg-brand-600 text-white w-7 h-7 rounded-full flex items-center justify-center shadow-lg ring-4 ring-white">
+                        <i class="fa-solid fa-graduation-cap text-xs"></i>
+                    </span>
+                    <div class="hidden md:block absolute -left-40 top-0 w-28 text-right pr-6">
+                        <span class="text-sm font-extrabold text-brand-600 tracking-wider">2026 — Sekarang</span>
+                    </div>
+                    <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm relative group hover:shadow-md transition-all">
+                        <span class="inline-block md:hidden text-xs font-extrabold text-brand-600 tracking-wider mb-2">2026 — Sekarang</span>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <h3 class="text-xl font-bold text-slate-900">Institut Teknologi Bisnis Yadika Pasuruan</h3>
+                            <span class="self-start sm:self-auto bg-brand-50 text-brand-700 text-xs px-3 py-1.5 rounded-lg font-bold">Perguruan Tinggi</span>
+                        </div>
+                        <p class="text-brand-600 font-semibold text-sm mt-1">Program Studi: Sistem dan Teknologi Informasi</p>
+                    </div>
+                </div>
+
                 <!-- Pendidikan 3 -->
                 <div class="relative pl-8 md:pl-12">
                     <!-- Dot icon -->
@@ -365,7 +668,7 @@
     </section>
 
     <!-- Section Pengalaman Kerja -->
-    <section id="pengalaman" class="py-20 bg-white">
+    <section id="pengalaman" class="reveal-on-scroll py-20 bg-white section-glow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-xs font-bold text-brand-600 tracking-widest uppercase block mb-2">PENGALAMAN NYATA</span>
@@ -448,7 +751,7 @@
     </section>
 
     <!-- Sertifikasi, Keahlian & Nilai Akhir -->
-    <section id="sertifikasi" class="py-20 bg-slate-50">
+    <section id="sertifikasi" class="reveal-on-scroll py-20 bg-slate-50 section-glow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-xs font-bold text-brand-600 tracking-widest uppercase block mb-2">SERTIFIKAT KOMPETENSI</span>
@@ -472,7 +775,7 @@
                         <!-- Nilai 1 -->
                         <div>
                             <div class="flex justify-between text-sm font-bold text-slate-700 mb-1">
-                                <span>Teknik Komputer & Jaringan (Mapel Kejuruan)</span>
+                                <span>Sistem & Teknologi Informasi (Mapel Kejuruan)</span>
                                 <span class="text-brand-600">92.14</span>
                             </div>
                             <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
@@ -579,8 +882,55 @@
         </div>
     </section>
 
+    <!-- Section Media Sosial -->
+    <section id="media-sosial" class="reveal-on-scroll py-16 bg-slate-50 section-glow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold text-brand-600 tracking-widest uppercase">MEDIA SOSIAL</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">Temukan Saya di Media Sosial</h2>
+                <p class="text-slate-500 mt-3">Selain melalui kontak langsung, saya juga dapat dihubungi dan dikenal lebih dekat melalui media sosial.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/rafly_z23?stkn=MWd6YmR0OHI3amJmMg==" target="_blank" rel="noopener noreferrer" class="tech-card bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center hover:shadow-lg hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 mx-auto bg-pink-50 text-pink-600 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mt-4">Instagram</h3>
+                    <p class="text-sm font-semibold text-brand-600 mt-1">@rafly_z23</p>
+                    <span class="inline-flex items-center gap-2 text-xs text-slate-400 mt-3">Kunjungi profil <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@its_rafly2?_r=1&_t=ZS-9AHvRozzCvX" target="_blank" rel="noopener noreferrer" class="tech-card bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center hover:shadow-lg hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 mx-auto bg-slate-100 text-slate-900 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mt-4">TikTok</h3>
+                    <p class="text-sm font-semibold text-brand-600 mt-1">@its_rafly2</p>
+                    <span class="inline-flex items-center gap-2 text-xs text-slate-400 mt-3">Kunjungi profil <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/m-rafli-dzikrillah-801822418" target="_blank" rel="noopener noreferrer" class="tech-card bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center hover:shadow-lg hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 mx-auto bg-blue-50 text-blue-700 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mt-4">LinkedIn</h3>
+                    <p class="text-sm font-semibold text-brand-600 mt-1">M. Rafli Dzikrillah</p>
+                    <span class="inline-flex items-center gap-2 text-xs text-slate-400 mt-3">Kunjungi profil <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+            </div>
+
+            <div class="text-center mt-7">
+                <p class="text-sm text-slate-500">Media sosial saya bisa menjadi tempat untuk mengenal saya lebih dekat dan melihat aktivitas serta karya yang saya bagikan.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Section Kontak / Hubungi Kami -->
-    <section id="kontak" class="py-20 bg-white">
+    <section id="kontak" class="reveal-on-scroll py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-gradient-to-br from-brand-900 via-brand-800 to-indigo-950 rounded-[2.5rem] shadow-2xl overflow-hidden relative">
                 
@@ -696,6 +1046,124 @@
         </div>
     </footer>
 
+    <!-- Scripting for animations -->
+    <script>
+        (() => {
+            const canvas = document.getElementById('tech-canvas');
+            const bg = document.querySelector('.site-background');
+            if (!canvas || !bg) return;
+
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduceMotion) return;
+
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return;
+
+            let particles = [];
+            let width = 0;
+            let height = 0;
+            let animationFrame = 0;
+
+            function resize() {
+                const rect = bg.getBoundingClientRect();
+                width = Math.max(1, Math.floor(rect.width));
+                height = Math.max(1, Math.floor(rect.height));
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                canvas.style.width = width + 'px';
+                canvas.style.height = height + 'px';
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+                const count = width < 640 ? 28 : 52;
+                particles = Array.from({ length: count }, () => ({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - .5) * .28,
+                    vy: (Math.random() - .5) * .28,
+                    r: Math.random() * 1.8 + .7
+                }));
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, width, height);
+
+                for (const p of particles) {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < -10) p.x = width + 10;
+                    if (p.x > width + 10) p.x = -10;
+                    if (p.y < -10) p.y = height + 10;
+                    if (p.y > height + 10) p.y = -10;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(14, 116, 184, .42)';
+                    ctx.fill();
+                }
+
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const a = particles[i];
+                        const b = particles[j];
+                        const dx = a.x - b.x;
+                        const dy = a.y - b.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < 135) {
+                            const alpha = (1 - distance / 135) * .16;
+                            ctx.beginPath();
+                            ctx.moveTo(a.x, a.y);
+                            ctx.lineTo(b.x, b.y);
+                            ctx.strokeStyle = `rgba(14, 116, 184, ${alpha})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                animationFrame = requestAnimationFrame(draw);
+            }
+
+            resize();
+            draw();
+            window.addEventListener('resize', resize, { passive: true });
+
+            window.addEventListener('beforeunload', () => {
+                cancelAnimationFrame(animationFrame);
+            }, { once: true });
+        })();
+
+        // Scroll reveal: setiap bagian muncul dengan animasi lembut saat dibuka.
+        (() => {
+            const items = document.querySelectorAll('.reveal-on-scroll');
+            const cards = document.querySelectorAll('.tech-card, .glass-card, #pendidikan .bg-white.rounded-2xl, #media-sosial a');
+            if (!items.length) return;
+
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduceMotion || !('IntersectionObserver' in window)) {
+                items.forEach(el => el.classList.add('revealed'));
+                cards.forEach(el => el.classList.add('revealed'));
+                return;
+            }
+
+            cards.forEach((card, index) => {
+                card.classList.add('stagger-card');
+                card.style.transitionDelay = `${Math.min(index * 70, 420)}ms`;
+            });
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('revealed');
+                    obs.unobserve(entry.target);
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+            items.forEach(el => observer.observe(el));
+            cards.forEach(el => observer.observe(el));
+        })();
+    </script>
+
     <!-- Scripting for interactions -->
     <script>
         // Toggle Mobile Menu
@@ -747,5 +1215,3 @@
     </script>
 </body>
 </html>
-
-```
